@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--gray);
+}
+
+:root {
+    --darkblue: #0e0e55;
+    --gray: #ccdad1;
+}
+
+header {
+    background-color: var(--darkblue);
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    background-color: var(--gray);
+    font-weight: 700;
+    color: var(--darkblue);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.content {
+    background-color: var(--gray);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.side-letf {
+    flex: 4;
+    margin: 10px;
+}
+
+.side-right {
+    flex: 8;
+    margin: 10px;
+}
+
+.card {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    border: 1px solid #333;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.card h2 {
+    width: 100%;
+    background-color: var(--darkblue);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-style: 20px;
+    padding: 5px;
+    color: var(--gray);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--gray);
+    padding: 10px;
+}
+
+label {
+    font-size: 20px;
+    padding: 5px 0;
+    text-transform: capitalize;
+    color: #333;
+}
+
+form label,
+form input,
+form button {
+    width: 100%;
+}
+
+form input {
+    padding: 15px;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 5px;
+    background-color: black;
+    color: var(--gray);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin: 1px auto;
+    font-style: 20px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    transition: .5s;
+}
+
+button:hover{
+    background-color: #333;
+}
+
+
+.languages {
+    padding: 10px;
+}
+
+#search-item{
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+#repos .repos-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkblue);
+    padding: 10px;
+    color: var(--gray);
+    border-radius: 5px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-style: 20px;
+    font-weight: 700;
+    transition: .5s;
+}
+
+#repos .repos-item span a {
+    text-decoration: none;
+}
+
+#repos .repos-item:hover{
+    background-color: #333;
+}
+
+@media (max-width:740px) {
+    .content {
+        flex-direction: column;
+    }
+}
