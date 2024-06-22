@@ -7,6 +7,7 @@ userForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let user = usernameInput.value.trim();
     if (user) {
+        repos.textContent=''
         getUserRepos(user)
         // document.querySelector('#username').value=''
     } else {
