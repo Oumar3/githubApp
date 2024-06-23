@@ -3,6 +3,28 @@ let usernameInput = document.querySelector('#username')
 let languages = document.querySelector('.languages')
 let repos = document.querySelector('#repos')
 let searchItem = document.querySelector('#search-item')
+
+languages.addEventListener('click',(e)=>{
+    let lng = e.target.getAttribute('data-lng');
+    if(lng){
+        repos.textContent='';
+        getlanguage(lng)
+    }
+})
+
+async function getlanguage(lng){
+    let apiUrl = 'https://api.github.com/search/repositories?q=' + lng;
+    let req = await fetch(apiUrl,{method:'GET'});
+    if(req.ok){
+        let data = await req.json();
+        console.log(data);
+        displayRepos(data.items,lng)
+    }else{
+        console.log('Error est survenue');
+    }
+}
+
+
 userForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let user = usernameInput.value.trim();
@@ -23,7 +45,7 @@ async function getUserRepos(user) {
     } else {
         let data = await req.json();
         console.log(data);
-         displayRepos(data,user)
+        displayRepos(data,user)
     }
 }
 
@@ -37,7 +59,7 @@ function displayRepos(reposo,user){
         </a>
         `
     });
-    document.querySelector('#username').value='';
+    // document.querySelector('#username').value='';
 }
 
 // console.log(repos);
